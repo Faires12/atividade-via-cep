@@ -2,7 +2,7 @@
 
 <img src="example.png" alt="professor me da nota">
 
-## ☕ Projeto HTML + CSS
+## ☕ Projeto HTML + CSS + Javascript
 
 Projeto educacional
 
