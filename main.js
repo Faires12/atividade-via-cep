@@ -54,7 +54,8 @@ function drawError(err){
 }
 
 async function getInfos(cep){
-    loading.style.display = "flex"
+    
+    setLoadingTrue()
     try {
         let res = await fetch(`https://viacep.com.br/ws/${cep.replace(/[^0-9]/g, '')}/json/`)
         res = await res.json()
@@ -74,7 +75,29 @@ async function getInfos(cep){
         clear()
     }
 
+    setLoadingFalse()
+}
+
+function setLoadingTrue(){
+    loading.style.display = "flex"
+    cep.disabled = true
+    rua.disabled = true
+    bairro.disabled = true
+    cidade.disabled = true
+    uf.disabled = true
+    ibge.disabled = true
+    ddd.disabled = true
+}
+
+function setLoadingFalse(){
     loading.style.display = "none"
+    cep.disabled = false
+    rua.disabled = false
+    bairro.disabled = false
+    cidade.disabled = false
+    uf.disabled = false
+    ibge.disabled = false
+    ddd.disabled = false
 }
 
 function clear(){
